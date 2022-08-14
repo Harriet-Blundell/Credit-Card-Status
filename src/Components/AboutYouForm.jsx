@@ -1,7 +1,9 @@
 import React from "react";
+import AddressLookUp from "./AddressLookup";
 import "../Styles/AboutYouForm.css";
 
 export default function AboutYouForm({
+  title,
   firstName,
   lastName,
   date,
@@ -13,7 +15,18 @@ export default function AboutYouForm({
     <div className="about-you-form-container">
       <form className="form-container">
         <label className="form-label">
-          First name:
+          <p>Title</p>
+          <input
+            type="text"
+            name="title"
+            placeholder="Title"
+            value={title}
+            onChange={handleChange}
+            className="form-input"
+          />
+        </label>
+        <label className="form-label">
+          <p>First name</p>
           <input
             type="text"
             name="firstName"
@@ -24,7 +37,7 @@ export default function AboutYouForm({
           />
         </label>
         <label className="form-label">
-          Last name:
+          <p>Last name:</p>
           <input
             type="text"
             name="lastName"
@@ -35,10 +48,11 @@ export default function AboutYouForm({
           />
         </label>
         <div className="dob-container">
+          <p>Date of birth</p>
           <div className="field-inline-block">
-            <label>DD</label>
             <input
               type="text"
+              placeholder="DD"
               pattern="[0-9]*"
               maxLength="2"
               size="2"
@@ -48,11 +62,10 @@ export default function AboutYouForm({
               onChange={handleChange}
             />
           </div>
-          /
           <div className="field-inline-block">
-            <label>MM</label>
             <input
               type="text"
+              placeholder="MM"
               pattern="[0-9]*"
               maxLength="2"
               size="2"
@@ -62,11 +75,10 @@ export default function AboutYouForm({
               onChange={handleChange}
             />
           </div>
-          /
           <div className="field-inline-block">
-            <label>YYYY</label>
             <input
               type="text"
+              placeholder="YYYY"
               pattern="[0-9]*"
               maxLength="4"
               size="4"
@@ -76,6 +88,7 @@ export default function AboutYouForm({
               onChange={handleChange}
             />
           </div>
+          <AddressLookUp />
         </div>
       </form>
     </div>
