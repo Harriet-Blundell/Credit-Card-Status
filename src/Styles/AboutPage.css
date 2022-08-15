@@ -9,9 +9,9 @@ input {
   top: 0%;
   border: 2px solid #d9d9d9;
   border-radius: 8px;
+  padding: 14px;
 }
 
 p {
-    text-align: left;
     margin-bottom: 0px;
 }
