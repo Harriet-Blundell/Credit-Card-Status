@@ -5,6 +5,7 @@ This project, Credit Card Status, is a web application that will allow customers
 To view a hosted version of this application please go to: // place link here when it is ready
 
 To view Figma designs for this application please go to: https://www.figma.com/file/QB58iVsjDND4RM72nNkELz/Credit-Card-Status
+
 To view Whimsical component tree for this application please go to: https://whimsical.com/app-S7GncyA7FpG5wmzC8BCjuj
 
 ---
