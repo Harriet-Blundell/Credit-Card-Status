@@ -14,9 +14,12 @@ export default function AboutYouForm({
   return (
     <div className="about-you-form-container">
       <form className="form-container">
-        <label className="form-label">
-          <p>Title</p>
+        <div className="input-container">
+          <label className="form-label" for="title">
+            Title
+          </label>
           <input
+            id="title"
             type="text"
             name="title"
             placeholder="Title"
@@ -24,10 +27,13 @@ export default function AboutYouForm({
             onChange={handleChange}
             className="form-input"
           />
-        </label>
-        <label className="form-label">
-          <p>First name</p>
+        </div>
+        <div className="input-container">
+          <label className="form-label" for="firstName">
+            First name
+          </label>
           <input
+            id="firstName"
             type="text"
             name="firstName"
             placeholder="First name"
@@ -35,10 +41,13 @@ export default function AboutYouForm({
             onChange={handleChange}
             className="form-input"
           />
-        </label>
-        <label className="form-label">
-          <p>Last name:</p>
+        </div>
+        <div className="input-container">
+          <label className="form-label" for="lastName">
+            Last name
+          </label>
           <input
+            id="lastName"
             type="text"
             name="lastName"
             placeholder="Last name"
@@ -46,50 +55,53 @@ export default function AboutYouForm({
             onChange={handleChange}
             className="form-input"
           />
-        </label>
-        <div className="dob-container">
-          <p>Date of birth</p>
-          <div className="field-inline-block">
-            <input
-              type="text"
-              placeholder="DD"
-              pattern="[0-9]*"
-              maxLength="2"
-              size="2"
-              className="date-field"
-              name="date"
-              value={date}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="field-inline-block">
-            <input
-              type="text"
-              placeholder="MM"
-              pattern="[0-9]*"
-              maxLength="2"
-              size="2"
-              className="date-field"
-              name="month"
-              value={month}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="field-inline-block">
-            <input
-              type="text"
-              placeholder="YYYY"
-              pattern="[0-9]*"
-              maxLength="4"
-              size="4"
-              className="date-field date-field--year"
-              name="year"
-              value={year}
-              onChange={handleChange}
-            />
-          </div>
-          <AddressLookUp />
         </div>
+        <div className="dob-container">
+          <label className="form-label">Date of birth</label>
+          <div className="dob-input-container">
+            <div className="field-inline-block">
+              <input
+                type="text"
+                placeholder="DD"
+                pattern="[0-9]*"
+                maxLength="2"
+                size="2"
+                className="date-field"
+                name="date"
+                value={date}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="field-inline-block">
+              <input
+                type="text"
+                placeholder="MM"
+                pattern="[0-9]*"
+                maxLength="2"
+                size="2"
+                className="date-field"
+                name="month"
+                value={month}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="field-inline-block">
+              <input
+                type="text"
+                placeholder="YYYY"
+                pattern="[0-9]*"
+                maxLength="4"
+                size="4"
+                className="date-field date-field--year"
+                name="year"
+                value={year}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+        </div>
+        <AddressLookUp />
+        <input type="submit" value="Next"></input>
       </form>
     </div>
   );
