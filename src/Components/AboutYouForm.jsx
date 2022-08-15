@@ -59,45 +59,39 @@ export default function AboutYouForm({
         <div className="dob-container">
           <label className="form-label">Date of birth</label>
           <div className="dob-input-container">
-            <div className="field-inline-block">
-              <input
-                type="text"
-                placeholder="DD"
-                pattern="[0-9]*"
-                maxLength="2"
-                size="2"
-                className="date-field"
-                name="date"
-                value={date}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="field-inline-block">
-              <input
-                type="text"
-                placeholder="MM"
-                pattern="[0-9]*"
-                maxLength="2"
-                size="2"
-                className="date-field"
-                name="month"
-                value={month}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="field-inline-block">
-              <input
-                type="text"
-                placeholder="YYYY"
-                pattern="[0-9]*"
-                maxLength="4"
-                size="4"
-                className="date-field date-field--year"
-                name="year"
-                value={year}
-                onChange={handleChange}
-              />
-            </div>
+            <input
+              type="text"
+              placeholder="DD"
+              pattern="[0-9]*"
+              maxLength="2"
+              size="2"
+              className="date-field"
+              name="date"
+              value={date}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              placeholder="MM"
+              pattern="[0-9]*"
+              maxLength="2"
+              size="2"
+              className="date-field"
+              name="month"
+              value={month}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              placeholder="YYYY"
+              pattern="[0-9]*"
+              maxLength="4"
+              size="4"
+              className="date-field date-field--year"
+              name="year"
+              value={year}
+              onChange={handleChange}
+            />
           </div>
         </div>
         <AddressLookUp />
