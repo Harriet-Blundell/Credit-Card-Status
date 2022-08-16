@@ -20,6 +20,10 @@
   margin-bottom: 22px;
 }
 
+.form-label {
+  font-weight: bold;
+}
+
 .form-input {
   height: 50px;
   width: 100%;
@@ -41,18 +45,6 @@
   width: 100%;
 }
 
-/* .field-inline-block {
-  margin-top: 9px;
-}
-
-.field-inline-block:nth-child(1) {
-  margin-right: 20px;
-}
-
-.field-inline-block:nth-child(2) {
-  margin-right: 20px;
-} */
-
 .date-field {
   width: 30%;
   height: 50px;
@@ -60,8 +52,10 @@
   display: flex;
 }
 
-input[type="submit"] {
+input[type=button] {
   width: 100%;
+  font-size: 16px;
+  font-weight: bold;
   background-color: #374151;
   color: white;
   padding: 14px 20px;
