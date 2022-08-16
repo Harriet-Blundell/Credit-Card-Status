@@ -1,11 +1,9 @@
 import React from "react";
 
-export default function FinanceForm({ title }) {
-  console.log(title, "<<< title");
+export default function FinanceForm(aboutYouFormValues) {
   return (
     <div>
       <h1>Finance Form</h1>
-      <p>{title}</p>
     </div>
   );
 }

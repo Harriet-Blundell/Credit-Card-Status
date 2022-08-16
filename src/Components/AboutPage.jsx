@@ -17,8 +17,9 @@ export default function AboutPage() {
 
   function handleChange(e) {
     const { name, value } = e.target;
-    setAboutYouFormValues(() => {
+    setAboutYouFormValues((prevState) => {
       return {
+        ...prevState,
         [name]: value,
       };
     });
@@ -44,5 +45,5 @@ export default function AboutPage() {
 /*
 - create state to hold data
 - handleChange is updating state to track the user's input
-
+- prevState is keeping state up to date with what the user has inputted
 */
