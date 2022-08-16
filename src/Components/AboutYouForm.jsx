@@ -10,14 +10,14 @@ export default function AboutYouForm({
   month,
   year,
   handleChange,
+  handleClick,
 }) {
   return (
     <div className="about-you-form-container">
+      <h1 className="title">About You</h1>
       <form className="form-container">
         <div className="input-container">
-          <label className="form-label" for="title">
-            Title
-          </label>
+          <label className="form-label">Title</label>
           <input
             id="title"
             type="text"
@@ -29,9 +29,7 @@ export default function AboutYouForm({
           />
         </div>
         <div className="input-container">
-          <label className="form-label" for="firstName">
-            First name
-          </label>
+          <label className="form-label">First name</label>
           <input
             id="firstName"
             type="text"
@@ -43,9 +41,7 @@ export default function AboutYouForm({
           />
         </div>
         <div className="input-container">
-          <label className="form-label" for="lastName">
-            Last name
-          </label>
+          <label className="form-label">Last name</label>
           <input
             id="lastName"
             type="text"
@@ -95,8 +91,8 @@ export default function AboutYouForm({
           </div>
         </div>
         <AddressLookUp />
-        <input type="submit" value="Next"></input>
+        <input type="button" onClick={handleClick} value="Next" />
       </form>
     </div>
-  );
+  )
 }
