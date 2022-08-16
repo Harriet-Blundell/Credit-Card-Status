@@ -32,7 +32,7 @@ export default function FinanceForm(aboutYouFormValues) {
             className="income-input"
             placeholder="Annual income"
           />
-          per year
+          <span className="income-period">per year</span>
         </span>
       </div>
       <div className="employment-container">
@@ -44,14 +44,14 @@ export default function FinanceForm(aboutYouFormValues) {
           value={financeFormValues.employment}
           onChange={handleFormChanges}
         >
-          <option value="" selected disabled hidden>
-            Select
+          <option value="" selected disabled>
+            Select employment status
           </option>
           <option value="Full time">Full time</option>
           <option value="Part time">Part time</option>
-          <option value="Self employed">Self employed</option>
           <option value="Student">Student</option>
         </select>
+        <input type="button" value="Check my eligibility" />
       </div>
     </div>
   );
