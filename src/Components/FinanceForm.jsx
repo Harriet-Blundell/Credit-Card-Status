@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation, Link } from "react-router-dom";
 import "../Styles/FinanceForm.css";
 
 export default function FinanceForm() {
@@ -51,8 +52,14 @@ export default function FinanceForm() {
           <option value="Part time">Part time</option>
           <option value="Student">Student</option>
         </select>
-        <input type="button" value="Check my eligibility" />
+        <button type="button">CHECK MY ELIGIBILITY</button>
       </div>
     </div>
   );
 }
+
+/*
+- Add form validation
+
+
+*/

@@ -3,12 +3,13 @@
   max-width: 500px;
   margin: auto;
   padding: 20px;
-}
-
-.finance-form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.title {
+  text-align: center;
 }
 
 .income-container {
