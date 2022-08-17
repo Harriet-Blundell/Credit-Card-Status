@@ -5,6 +5,7 @@ import App from "./App";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import FinanceForm from "./Components/FinanceForm";
+import AddressForm from "./Components/AddressForm";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <Router>
       <Routes>
         <Route exact path="/" element={<App />} />
+        <Route path="/your-address" element={<AddressForm />} />
         <Route path="/your-finances" element={<FinanceForm />} />
       </Routes>
     </Router>

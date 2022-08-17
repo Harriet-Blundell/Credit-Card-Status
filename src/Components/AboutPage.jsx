@@ -29,9 +29,9 @@ export default function AboutPage() {
         aboutYouFormValues={aboutYouFormValues}
         handleChange={handleChange}
       />
-      <button>
-        <Link to="/your-finances" state={{ aboutYouFormValues }}>
-          Next
+      <button className="button">
+        <Link to="/your-address" state={{ aboutYouFormValues }}>
+          NEXT
         </Link>
       </button>
     </div>

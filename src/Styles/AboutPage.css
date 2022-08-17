@@ -1,7 +1,22 @@
+.about-page-container {
+  max-width: 500px;
+  padding: 20px;
+  margin: auto;
+}
+
 .title {
   font-family: "Montserrat", sans-serif;
   color: #041549;
   font-weight: bold;
+}
+
+.button {
+  width: 100%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 input {
@@ -14,5 +29,5 @@ input {
 }
 
 p {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }

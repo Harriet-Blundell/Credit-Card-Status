@@ -1,0 +1,64 @@
+.address-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  justify-content: center;
+  margin: auto;
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.address-form-container input {
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.address-form-container h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 48px;
+  color: #041549;
+}
+
+.address-input-container {
+  width: 100%;
+}
+
+.address-input-container label {
+  color: #041549;
+  text-align: left;
+  font-weight: bold;
+}
+
+.address-input-container input {
+  margin-top: 9px;
+}
+
+.postcode-lookup-container {
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.idpc-button {
+  background-color: #374151;
+}
+
+.idpc-select-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.idpc-select {
+  box-sizing: border-box;
+  right: 0%;
+  top: 0%;
+  border: 2px solid #d9d9d9;
+  border-radius: 8px;
+  padding: 14px;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+}
