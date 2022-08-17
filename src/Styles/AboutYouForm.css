@@ -1,7 +1,4 @@
 .about-you-form-container {
-  max-width: 500px;
-  margin: auto;
-  padding: 20px;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -18,6 +15,10 @@
   flex-direction: column;
   width: 100%;
   margin-bottom: 22px;
+}
+
+.input-container select {
+  margin-bottom: 0px;
 }
 
 .form-label {

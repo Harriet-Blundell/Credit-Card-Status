@@ -1,6 +1,4 @@
 import React from "react";
-import AddressLookUp from "./AddressLookup";
-import { Link } from "react-router-dom";
 import "../Styles/AboutYouForm.css";
 
 export default function AboutYouForm(aboutYouFormValues) {
@@ -13,15 +11,21 @@ export default function AboutYouForm(aboutYouFormValues) {
       <form className="form-container">
         <div className="input-container">
           <label className="form-label">Title</label>
-          <input
+          <select
             id="title"
-            type="text"
+            className="option-container"
             name="title"
-            placeholder="Title"
             value={title}
             onChange={handleChange}
-            className="form-input"
-          />
+          >
+            <option value="" selected disabled>
+              Select title
+            </option>
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Miss">Miss</option>
+            <option value="Ms">Ms</option>
+          </select>
         </div>
         <div className="input-container">
           <label className="form-label">First name</label>
@@ -33,6 +37,7 @@ export default function AboutYouForm(aboutYouFormValues) {
             value={firstName}
             onChange={handleChange}
             className="form-input"
+            required
           />
         </div>
         <div className="input-container">
@@ -45,6 +50,7 @@ export default function AboutYouForm(aboutYouFormValues) {
             value={lastName}
             onChange={handleChange}
             className="form-input"
+            required
           />
         </div>
         <div className="dob-container">
@@ -60,6 +66,7 @@ export default function AboutYouForm(aboutYouFormValues) {
               name="date"
               value={date}
               onChange={handleChange}
+              required
             />
             <input
               type="text"
@@ -71,6 +78,7 @@ export default function AboutYouForm(aboutYouFormValues) {
               name="month"
               value={month}
               onChange={handleChange}
+              required
             />
             <input
               type="text"
@@ -82,18 +90,11 @@ export default function AboutYouForm(aboutYouFormValues) {
               name="year"
               value={year}
               onChange={handleChange}
+              required
             />
           </div>
         </div>
-        <AddressLookUp />
       </form>
     </div>
   );
 }
-
-/*
-
-- The path '/your-finances' will render the Finance component because the path matches
-  what has been written in index.js
-
-*/
