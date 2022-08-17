@@ -2,14 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import FinanceForm from "./Components/FinanceForm";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <Routes>
+        <Route exact path="/" element={<App />} />
+        <Route path="/your-finances" element={<FinanceForm />} />
+      </Routes>
     </Router>
   </React.StrictMode>
 );

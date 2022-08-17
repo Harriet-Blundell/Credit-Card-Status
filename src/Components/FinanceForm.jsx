@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../Styles/FinanceForm.css";
 
-export default function FinanceForm(aboutYouFormValues) {
+export default function FinanceForm() {
   const [financeFormValues, setFinanceFormValues] = useState({
     income: "",
     employment: "",

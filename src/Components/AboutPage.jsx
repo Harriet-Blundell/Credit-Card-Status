@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../Styles/AboutPage.css";
 import AboutYouForm from "./AboutYouForm";
-import FinanceForm from "./FinanceForm";
+import { Link } from "react-router-dom";
+import "../Styles/AboutPage.css";
 
 export default function AboutPage() {
   const [aboutYouFormValues, setAboutYouFormValues] = useState({
@@ -13,8 +13,6 @@ export default function AboutPage() {
     year: "",
   });
 
-  const [showFinanceForm, setShowFinanceForm] = useState(false);
-
   function handleChange(e) {
     const { name, value } = e.target;
     setAboutYouFormValues((prevState) => {
@@ -25,20 +23,18 @@ export default function AboutPage() {
     });
   }
 
-  const handleClick = (e) => {
-    setShowFinanceForm(true);
-  };
-
-  return !showFinanceForm ? (
+  return (
     <div className="about-page-container">
       <AboutYouForm
         aboutYouFormValues={aboutYouFormValues}
         handleChange={handleChange}
-        handleClick={handleClick}
       />
+      <button>
+        <Link to="/your-finances" state={{ aboutYouFormValues }}>
+          Next
+        </Link>
+      </button>
     </div>
-  ) : (
-    <FinanceForm aboutYouFormValues={aboutYouFormValues} />
   );
 }
 

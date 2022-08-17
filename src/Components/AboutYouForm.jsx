@@ -1,17 +1,12 @@
 import React from "react";
 import AddressLookUp from "./AddressLookup";
+import { Link } from "react-router-dom";
 import "../Styles/AboutYouForm.css";
 
-export default function AboutYouForm({
-  title,
-  firstName,
-  lastName,
-  date,
-  month,
-  year,
-  handleChange,
-  handleClick,
-}) {
+export default function AboutYouForm(aboutYouFormValues) {
+  const { title, firstName, lastName, date, month, year, handleChange } =
+    aboutYouFormValues;
+
   return (
     <div className="about-you-form-container">
       <h1 className="title">About You</h1>
@@ -91,8 +86,14 @@ export default function AboutYouForm({
           </div>
         </div>
         <AddressLookUp />
-        <input type="button" onClick={handleClick} value="Next" />
       </form>
     </div>
-  )
+  );
 }
+
+/*
+
+- The path '/your-finances' will render the Finance component because the path matches
+  what has been written in index.js
+
+*/
