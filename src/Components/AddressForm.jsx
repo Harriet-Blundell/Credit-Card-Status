@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PostcodeLookupComponent from "./PostcodeLookupComponent";
-import { useLocation, Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "../Styles/AddressForm.css";
 
 export default function AddressForm() {
@@ -22,8 +22,16 @@ export default function AddressForm() {
   }
 
   const location = useLocation();
+  const navigate = useNavigate();
 
   const { aboutYouFormValues } = location.state;
+
+  function onSubmitAddress(e) {
+    navigate("/your-finances", {
+      state: { aboutYouFormValues, address },
+    });
+    e.preventDefault();
+  }
 
   return (
     <div className="address-form-container">
@@ -76,10 +84,8 @@ export default function AddressForm() {
           onChange={(e) => handleAddressChange("postcode", e.target.value)}
         />
       </div>
-      <button className="button">
-        <Link to="/your-finances" state={{ aboutYouFormValues, address }}>
-          NEXT
-        </Link>
+      <button className="button" type="submit" onClick={onSubmitAddress}>
+        NEXT
       </button>
     </div>
   );

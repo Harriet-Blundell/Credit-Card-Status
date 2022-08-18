@@ -1,0 +1,46 @@
+.credit-card-container {
+  width: 100%;
+}
+
+.card-container {
+  background: #f3f4f6;
+  height: 100%;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 50px;
+  color: white;
+}
+
+.card-container h1 {
+  text-align: center;
+}
+
+.card-container p {
+  margin-bottom: 20px;
+}
+
+.card-container span {
+  font-weight: bold;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.card-container.anywhere {
+  background-color: #c14334;
+}
+
+.card-container.student {
+  background-color: #0b5c43;
+}
+
+.card-container.liquid {
+  background-color: #3c9fbe;
+}

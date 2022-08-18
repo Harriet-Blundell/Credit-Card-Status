@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../Styles/AboutPage.css";
 
 export default function AboutForm() {
@@ -10,7 +10,20 @@ export default function AboutForm() {
     date: "",
     month: "",
     year: "",
+    submitDisabled: true,
   });
+
+  const { title, firstName, lastName, date, month, year, submitDisabled } =
+    aboutYouFormValues;
+
+  const navigate = useNavigate();
+
+  function onSubmit(e) {
+    navigate("/your-address", {
+      state: { aboutYouFormValues },
+    });
+    e.preventDefault();
+  }
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -18,11 +31,10 @@ export default function AboutForm() {
       return {
         ...prevState,
         [name]: value,
+        submitDisabled: !submitDisabled,
       };
     });
   }
-
-  const { title, firstName, lastName, date, month, year } = aboutYouFormValues;
 
   return (
     <div className="container">
@@ -37,6 +49,7 @@ export default function AboutForm() {
               name="title"
               value={title}
               onChange={handleChange}
+              // required
             >
               <option value="" selected disabled>
                 Select title
@@ -53,11 +66,12 @@ export default function AboutForm() {
               id="firstName"
               type="text"
               name="firstName"
+              maxLength="20"
               placeholder="First name"
               value={firstName}
               onChange={handleChange}
               className="form-input"
-              required
+              // required
             />
           </div>
           <div className="input-container">
@@ -66,18 +80,19 @@ export default function AboutForm() {
               id="lastName"
               type="text"
               name="lastName"
+              maxLength="20"
               placeholder="Last name"
               value={lastName}
               onChange={handleChange}
               className="form-input"
-              required
+              // required
             />
           </div>
           <div className="dob-container">
             <label className="form-label">Date of birth</label>
             <div className="dob-input-container">
               <input
-                type="text"
+                type="number"
                 placeholder="DD"
                 pattern="[0-9]*"
                 maxLength="2"
@@ -86,10 +101,10 @@ export default function AboutForm() {
                 name="date"
                 value={date}
                 onChange={handleChange}
-                required
+                // required
               />
               <input
-                type="text"
+                type="number"
                 placeholder="MM"
                 pattern="[0-9]*"
                 maxLength="2"
@@ -98,10 +113,10 @@ export default function AboutForm() {
                 name="month"
                 value={month}
                 onChange={handleChange}
-                required
+                // required
               />
               <input
-                type="text"
+                type="number"
                 placeholder="YYYY"
                 pattern="[0-9]*"
                 maxLength="4"
@@ -110,16 +125,14 @@ export default function AboutForm() {
                 name="year"
                 value={year}
                 onChange={handleChange}
-                required
+                // required
               />
             </div>
           </div>
-        </form>
-        <button className="button">
-          <Link to="/your-address" state={{ aboutYouFormValues }}>
+          <button className="button" type="submit" onClick={onSubmit}>
             NEXT
-          </Link>
-        </button>
+          </button>
+        </form>
       </div>
     </div>
   );

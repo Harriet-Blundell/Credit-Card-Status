@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "../Styles/FinanceForm.css";
 
 export default function FinanceForm() {
@@ -19,7 +19,15 @@ export default function FinanceForm() {
   }
 
   const location = useLocation();
+  const navigate = useNavigate();
   const { aboutYouFormValues, address } = location.state;
+
+  function onSubmitFinances(e) {
+    navigate("/summary", {
+      state: { aboutYouFormValues, address, financeFormValues },
+    });
+    e.preventDefault();
+  }
 
   return (
     <div className="finance-form-container">
@@ -55,10 +63,8 @@ export default function FinanceForm() {
           <option value="Part time">Part time</option>
           <option value="Student">Student</option>
         </select>
-        <button className="button">
-          <Link to="/summary" state={{ aboutYouFormValues, address, financeFormValues }}>
-            CHECK MY ELIGIBILITY
-          </Link>
+        <button className="button" type="submit" onClick={onSubmitFinances}>
+          CHECK MY ELIGIBILITY
         </button>
       </div>
     </div>
