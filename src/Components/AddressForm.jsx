@@ -24,7 +24,6 @@ export default function AddressForm() {
   const location = useLocation();
 
   const { aboutYouFormValues } = location.state;
-  const { postcode } = address;
 
   return (
     <div className="address-form-container">
@@ -78,7 +77,7 @@ export default function AddressForm() {
         />
       </div>
       <button className="button">
-        <Link to="/your-finances" state={{ aboutYouFormValues, postcode }}>
+        <Link to="/your-finances" state={{ aboutYouFormValues, address }}>
           NEXT
         </Link>
       </button>

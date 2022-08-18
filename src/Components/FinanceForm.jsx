@@ -18,6 +18,9 @@ export default function FinanceForm() {
     });
   }
 
+  const location = useLocation();
+  const { aboutYouFormValues, address } = location.state;
+
   return (
     <div className="finance-form-container">
       <h1 className="title">Your finances</h1>
@@ -52,7 +55,11 @@ export default function FinanceForm() {
           <option value="Part time">Part time</option>
           <option value="Student">Student</option>
         </select>
-        <button type="button">CHECK MY ELIGIBILITY</button>
+        <button className="button">
+          <Link to="/summary" state={{ aboutYouFormValues, address, financeFormValues }}>
+            CHECK MY ELIGIBILITY
+          </Link>
+        </button>
       </div>
     </div>
   );
