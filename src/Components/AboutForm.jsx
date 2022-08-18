@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/AboutPage.css";
 
-export default function AboutPage() {
+export default function AboutForm() {
   const [aboutYouFormValues, setAboutYouFormValues] = useState({
     title: "",
     firstName: "",
