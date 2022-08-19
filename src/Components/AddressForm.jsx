@@ -12,6 +12,8 @@ export default function AddressForm() {
     postcode: "",
   });
 
+  const [disabled, setDisabled] = useState(false);
+
   function handleAddressChange(name, value) {
     setAddress((prevState) => {
       return {
@@ -19,6 +21,7 @@ export default function AddressForm() {
         [name]: value,
       };
     });
+    setDisabled(!disabled)
   }
 
   const location = useLocation();
@@ -26,7 +29,7 @@ export default function AddressForm() {
 
   const { aboutYouFormValues } = location.state;
 
-  function onSubmitAddress(e) {
+  function handleOnClick(e) {
     navigate("/your-finances", {
       state: { aboutYouFormValues, address },
     });
@@ -35,58 +38,63 @@ export default function AddressForm() {
 
   return (
     <div className="address-form-container">
-      <h1>Your address</h1>
-      <PostcodeLookupComponent
-        onAddressSelected={(address) => setAddress(address)}
-      />
-      <div className="address-input-container">
-        <label>Address Line One</label>
-        <input
-          type="text"
-          name="line_1"
-          value={address.line_1}
-          onChange={(e) => handleAddressChange("line_1", e.target.value)}
+      <form onSubmit={handleOnClick}>
+        <h1>Your address</h1>
+        <PostcodeLookupComponent
+          onAddressSelected={(address) => setAddress(address)}
         />
-      </div>
-      <div className="address-input-container">
-        <label>Address Line Two</label>
-        <input
-          type="text"
-          name="line_2"
-          value={address.line_2}
-          onChange={(e) => handleAddressChange("line_2", e.target.value)}
-        />
-      </div>
-      <div className="address-input-container">
-        <label>Address Line Three</label>
-        <input
-          type="text"
-          name="line_3"
-          value={address.line_3}
-          onChange={(e) => handleAddressChange("line_3", e.target.value)}
-        />
-      </div>
-      <div className="address-input-container">
-        <label>Post Town</label>
-        <input
-          type="text"
-          name="post_town"
-          value={address.post_town}
-          onChange={(e) => handleAddressChange("post_town", e.target.value)}
-        />
-      </div>
-      <div className="address-input-container">
-        <label>Postcode</label>
-        <input
-          type="text"
-          name="postcode"
-          value={address.postcode}
-          onChange={(e) => handleAddressChange("postcode", e.target.value)}
-        />
-      </div>
-      <button className="button" type="submit" onClick={onSubmitAddress}>
-        NEXT
-      </button>
+        <div className="address-input-container">
+          <label>Address Line One</label>
+          <input
+            type="text"
+            name="line_1"
+            value={address.line_1}
+            onChange={(e) => handleAddressChange("line_1", e.target.value)}
+            required
+          />
+        </div>
+        <div className="address-input-container">
+          <label>Address Line Two</label>
+          <input
+            type="text"
+            name="line_2"
+            value={address.line_2}
+            onChange={(e) => handleAddressChange("line_2", e.target.value)}
+          />
+        </div>
+        <div className="address-input-container">
+          <label>Address Line Three</label>
+          <input
+            type="text"
+            name="line_3"
+            value={address.line_3}
+            onChange={(e) => handleAddressChange("line_3", e.target.value)}
+          />
+        </div>
+        <div className="address-input-container">
+          <label>Post Town</label>
+          <input
+            type="text"
+            name="post_town"
+            value={address.post_town}
+            onChange={(e) => handleAddressChange("post_town", e.target.value)}
+            required
+          />
+        </div>
+        <div className="address-input-container">
+          <label>Postcode</label>
+          <input
+            type="text"
+            name="postcode"
+            value={address.postcode}
+            onChange={(e) => handleAddressChange("postcode", e.target.value)}
+            required
+          />
+        </div>
+        <button className="button" type="submit" disabled={disabled}>
+          NEXT
+        </button>
+      </form>
     </div>
   );
 }

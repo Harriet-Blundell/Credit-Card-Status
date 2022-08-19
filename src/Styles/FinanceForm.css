@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.finance-form-container form {
+  width: 100%;
+}
+
 .title {
   text-align: center;
 }

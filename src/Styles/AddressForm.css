@@ -9,6 +9,10 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.address-form-container form {
+  width: 100%;
+}
+
 .address-form-container input {
   width: 100%;
   margin-bottom: 20px;

@@ -10,15 +10,15 @@ export default function AboutForm() {
     date: "",
     month: "",
     year: "",
-    submitDisabled: true,
   });
 
-  const { title, firstName, lastName, date, month, year, submitDisabled } =
-    aboutYouFormValues;
+  const [disabled, setDisabled] = useState(false);
+
+  const { title, firstName, lastName, date, month, year } = aboutYouFormValues;
 
   const navigate = useNavigate();
 
-  function onSubmit(e) {
+  function handleOnClick(e) {
     navigate("/your-address", {
       state: { aboutYouFormValues },
     });
@@ -31,16 +31,16 @@ export default function AboutForm() {
       return {
         ...prevState,
         [name]: value,
-        submitDisabled: !submitDisabled,
       };
     });
+    setDisabled(!disabled)
   }
 
   return (
     <div className="container">
       <div className="about-you-form-container">
         <h1 className="title">About You</h1>
-        <form className="form-container">
+        <form className="form-container" onSubmit={handleOnClick}>
           <div className="input-container">
             <label className="form-label">Title</label>
             <select
@@ -49,7 +49,7 @@ export default function AboutForm() {
               name="title"
               value={title}
               onChange={handleChange}
-              // required
+              required
             >
               <option value="" selected disabled>
                 Select title
@@ -65,13 +65,14 @@ export default function AboutForm() {
             <input
               id="firstName"
               type="text"
+              pattern="[a-zA-Z]*"
               name="firstName"
               maxLength="20"
               placeholder="First name"
               value={firstName}
               onChange={handleChange}
               className="form-input"
-              // required
+              required
             />
           </div>
           <div className="input-container">
@@ -80,12 +81,13 @@ export default function AboutForm() {
               id="lastName"
               type="text"
               name="lastName"
+              pattern="[a-zA-Z]*"
               maxLength="20"
               placeholder="Last name"
               value={lastName}
               onChange={handleChange}
               className="form-input"
-              // required
+              required
             />
           </div>
           <div className="dob-container">
@@ -94,42 +96,39 @@ export default function AboutForm() {
               <input
                 type="number"
                 placeholder="DD"
-                pattern="[0-9]*"
-                maxLength="2"
-                size="2"
+                pattern="\d*"
                 className="date-field"
                 name="date"
+                max="31"
                 value={date}
                 onChange={handleChange}
-                // required
+                required
               />
               <input
                 type="number"
                 placeholder="MM"
-                pattern="[0-9]*"
-                maxLength="2"
-                size="2"
+                pattern="\d*"
+                max="12"
                 className="date-field"
                 name="month"
                 value={month}
                 onChange={handleChange}
-                // required
+                required
               />
               <input
                 type="number"
                 placeholder="YYYY"
-                pattern="[0-9]*"
-                maxLength="4"
-                size="4"
+                pattern="\d*"
+                max="2022"
                 className="date-field date-field--year"
                 name="year"
                 value={year}
                 onChange={handleChange}
-                // required
+                required
               />
             </div>
           </div>
-          <button className="button" type="submit" onClick={onSubmit}>
+          <button className="button" type="submit" disabled={disabled}>
             NEXT
           </button>
         </form>
@@ -137,9 +136,3 @@ export default function AboutForm() {
     </div>
   );
 }
-
-/*
-- create state to hold data
-- handleChange is updating state to track the user's input
-- prevState is keeping state up to date with what the user has inputted
-*/
