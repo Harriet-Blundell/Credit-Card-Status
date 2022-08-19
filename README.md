@@ -2,7 +2,7 @@
 
 This project, Credit Card Status, is a web application that will allow customers to enter their details via a form and review credit cards that are applicable to their credit status.
 
-To view a hosted version of this application please go to: // place link here when it is ready
+To view a hosted version of this application please go to: https://credit-card-status.vercel.app/
 
 To view Figma designs for this application please go to: https://www.figma.com/file/QB58iVsjDND4RM72nNkELz/Credit-Card-Status
 
