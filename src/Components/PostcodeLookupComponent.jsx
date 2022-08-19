@@ -8,7 +8,7 @@ export default function PostcodeLookupComponent(props) {
 
   useEffect(() => {
     PostcodeLookup.setup({
-      apiKey: `${API_KEY}`,
+      apiKey: API_KEY,
       context: context.current,
       ...props,
     });
