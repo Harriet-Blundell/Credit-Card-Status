@@ -23,6 +23,7 @@ export default function AboutForm() {
       state: { aboutYouFormValues },
     });
     e.preventDefault();
+    setDisabled(!disabled);
   }
 
   function handleChange(e) {
@@ -33,7 +34,6 @@ export default function AboutForm() {
         [name]: value,
       };
     });
-    setDisabled(!disabled)
   }
 
   return (

@@ -18,7 +18,6 @@ export default function FinanceForm() {
         [name]: value,
       };
     });
-    setDisabled(!disabled);
   }
 
   const location = useLocation();
@@ -30,6 +29,7 @@ export default function FinanceForm() {
       state: { aboutYouFormValues, address, financeFormValues },
     });
     e.preventDefault();
+    setDisabled(!disabled);
   }
 
   return (
@@ -43,6 +43,7 @@ export default function FinanceForm() {
             <input
               type="number"
               name="income"
+              min="1"
               value={financeFormValues.income}
               onChange={handleFormChanges}
               className="income-input"
@@ -77,9 +78,3 @@ export default function FinanceForm() {
     </div>
   );
 }
-
-/*
-- Add form validation
-
-
-*/

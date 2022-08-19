@@ -17,7 +17,7 @@ export default function SummaryPage() {
 
   return (
     <div className="summary-container">
-      <h1>Summary</h1>
+      <h1 className="title">Summary</h1>
       <CustomerCard
         {...aboutYouFormValues}
         {...address}

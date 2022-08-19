@@ -6,7 +6,7 @@
 
 .title {
   font-family: "Montserrat", sans-serif;
-  color: #041549;
+  color: #343a40;
   font-weight: bold;
 }
 
@@ -82,6 +82,7 @@ p {
   justify-content: space-between;
   margin-top: 9px;
   width: 100%;
+  font-family: "Montserrat", sans-serif;
 }
 
 .date-field {
@@ -89,6 +90,7 @@ p {
   height: 50px;
   text-align: center;
   display: flex;
+  font-family: "Montserrat", sans-serif;
 }
 
 button {

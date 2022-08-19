@@ -21,7 +21,6 @@ export default function AddressForm() {
         [name]: value,
       };
     });
-    setDisabled(!disabled)
   }
 
   const location = useLocation();
@@ -34,6 +33,7 @@ export default function AddressForm() {
       state: { aboutYouFormValues, address },
     });
     e.preventDefault();
+    setDisabled(!disabled);
   }
 
   return (
