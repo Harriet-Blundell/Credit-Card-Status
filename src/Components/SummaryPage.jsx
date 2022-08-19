@@ -25,7 +25,9 @@ export default function SummaryPage() {
       />
       <h2>Cards available:</h2>
       <CreditCard {...financeFormValues} />
-      <button onClick={handleOnClick}>HOME</button>
+      <button onClick={handleOnClick} className="restart-journey-button">
+        RESTART
+      </button>
     </div>
   );
 }
