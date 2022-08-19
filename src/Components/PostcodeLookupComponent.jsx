@@ -1,13 +1,13 @@
 import React, { useEffect, createRef } from "react";
 import { PostcodeLookup } from "@ideal-postcodes/postcode-lookup";
-import { apiKey } from "../api.js";
+import { config } from "../config.js";
 
 export default function PostcodeLookupComponent(props) {
   const context = createRef();
 
   useEffect(() => {
     PostcodeLookup.setup({
-      apiKey: `${apiKey}`,
+      apiKey: `${config.apiKey}`,
       context: context.current,
       ...props,
     });
