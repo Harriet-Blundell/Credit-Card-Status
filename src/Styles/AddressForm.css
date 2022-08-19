@@ -66,3 +66,8 @@
   width: 100%;
   font-family: "Montserrat", sans-serif;
 }
+
+.idpc-error {
+  color: red;
+  font-weight: bold;
+}

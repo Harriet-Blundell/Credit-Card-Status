@@ -14,15 +14,15 @@ export default function CustomerCard({
   income,
 }) {
   function capitaliseInitial(name) {
-    return `${name.charAt(0).toUpperCase()}${name.slice(1)}`;
+    return `${name.charAt(0).toUpperCase()}${name.slice(1).toLowerCase()}`;
   }
 
   return (
     <div className="customer-card-container">
       <div className="customer-initials">
         <h1>
-          {capitaliseInitial(firstName[0])}
-          {capitaliseInitial(lastName[0])}
+          {firstName[0].toUpperCase()}
+          {lastName[0].toUpperCase()}
         </h1>
       </div>
       <div className="customer-content">
