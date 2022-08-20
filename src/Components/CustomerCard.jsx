@@ -36,7 +36,7 @@ export default function CustomerCard({
         </div>
         <div className="customer-information-container">
           <div className="customer-employment-information">
-            <p>{employment}</p>
+            <p>Employment: <span>{employment}</span></p>
             <p>
               Annual income: <span>£{income}</span>
             </p>
