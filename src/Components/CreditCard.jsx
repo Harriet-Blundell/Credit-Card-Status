@@ -13,13 +13,13 @@ export default function CreditCard(financeFormValues) {
             Apr: <span>33.9%</span>
           </p>
           <p>
-            Balance Transfer Offer Duration <span>0 months</span>
+            Balance Transfer Offer Duration: <span>0 months</span>
           </p>
           <p>
-            Purchase Offer Duration <span>0 months</span>
+            Purchase Offer Duration: <span>0 months</span>
           </p>
           <p>
-            Credit Available <span>£300</span>
+            Credit Available: <span>£300</span>
           </p>
         </div>
       </div>
@@ -32,13 +32,13 @@ export default function CreditCard(financeFormValues) {
               Apr: <span>18.9%</span>
             </p>
             <p>
-              Balance Transfer Offer Duration <span>0 months</span>
+              Balance Transfer Offer Duration: <span>0 months</span>
             </p>
             <p>
-              Purchase Offer Duration <span>6 months</span>
+              Purchase Offer Duration: <span>6 months</span>
             </p>
             <p>
-              Credit Available <span>£1200</span>
+              Credit Available: <span>£1200</span>
             </p>
           </div>
         </div>
@@ -54,13 +54,13 @@ export default function CreditCard(financeFormValues) {
               Apr: <span>33.9%</span>
             </p>
             <p>
-              Balance Transfer Offer Duration <span>12 months</span>
+              Balance Transfer Offer Duration: <span>12 months</span>
             </p>
             <p>
-              Purchase Offer Duration <span>6 months</span>
+              Purchase Offer Duration: <span>6 months</span>
             </p>
             <p>
-              Credit Available <span>£3000</span>
+              Credit Available: <span>£3000</span>
             </p>
           </div>
         </div>
