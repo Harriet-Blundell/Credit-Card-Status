@@ -39,6 +39,7 @@ npm i
 ## Tech Used:
 
 - Create React App
+- HTML
 - CSS
 - Whimsical
 - Figma
